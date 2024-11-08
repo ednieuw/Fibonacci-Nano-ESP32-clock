@@ -12,6 +12,9 @@ But the "Arduino Nano ESP32 small PCB" is probably the best choice or connection
 
 ![image](https://github.com/user-attachments/assets/e39ba5ca-d649-4f43-8106-5f46e602dc66)
 
+![image](https://github.com/user-attachments/assets/dacd3f89-f4d3-4dd8-9007-4a9766bb75ff)
+
+
 ```
 1 x PCB Nano ESP32
 1 x Arduino Nano ESP32 with pins
