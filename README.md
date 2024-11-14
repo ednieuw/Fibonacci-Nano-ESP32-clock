@@ -1,5 +1,8 @@
 # Fibonacci-Nano-ESP32-clock
-Fibonacci clock on Arduino Nano ESP32 with NTP time from WIFI.
+Fibonacci clock on Arduino Nano ESP32 with NTP time from WIFI. <br>
+A RTC DS3231 can be attached for an accurate time when no WIFI is available. <br>
+A LDR controls the light intensity. <br>
+In the menu that can be accessed via a serial terminal, Bluetooth or a Web page many options can be set or changed.
 
 More Fibonacci clocks:[here on Nano ](https://github.com/ednieuw/Fibonacci-Vierkantekokerklok)<br>
 and [here on ESP32 C3 and S3](https://github.com/ednieuw/Fibonacci-ESP32-C3-S3-Clock).
