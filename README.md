@@ -130,7 +130,7 @@ ___________________________________
 A SSID B Password C BLE beacon name
 D Date (D15012021) T Time (T132145)
 E Timezone  (E<-02>2 or E<+01>-1)
-F Own colour  (Hex FWWRRGGBB)
+F Fibonacci or Chrono display
 G Scan WIFI networks
 H Toggle use rotary encoder
 I To print this Info menu
@@ -141,7 +141,8 @@ O Display toggle On/Off
 P Status LED toggle On/Off
 Q Display colour choice (Q for options)
 R Reset settings @ = Reset MCU
-U Demo mode (msec) (M200)
+U Demo mode (msec) (U1000)
+V Normal, Extreme or Ultimate mode
 --Light intensity settings (1-250)--
 S Slope, L Min, M Max  (S80 L5 M200)
 W WIFI, X NTP&, CCC BLE, + Fast BLE
@@ -332,8 +333,6 @@ http://192.168.178.78/update
 Something like: Liygo-WristWatchESP32-V011.ino.twatch.bin 
 where V011 is the version number
  
-
-
 # Detailed description
 
 With the menu many preferences can be set. These preferences are stored on a SD-card or in the ESP32-S3 storage space.
@@ -402,15 +401,17 @@ Q Display colour choice (Q0-9)
 R Reset settings 
 R will set all preferences to default settings, it also clears the SSID and password.
 
+U Demo mode (U1000)
+In demo mode the speed of a second is accelarated. U1000 is good start value.
+
+V Normal, Extreme or Ultimate mode
+
 --Light intensity settings (1-250)--
 S=Slope V=Min  U=Max   (S80 V5 U200)
 See chapter: Regulating the light intensity of the display
 
 @ = Reset MCU
 @ will restart the MCU. This is handy when the SSID, et cetera are changed and the program must be restarted. Settings will not be deleted.
-U Demo mode (msec) (U200)
-Let the run the time at a higher speed. U200 will run the clock 5 times faster.
-
 
 W=WIFI, X=NTP&, Y=BLE, Z=Use SD
 Toggle WIFI, NTP on and off.
