@@ -169,14 +169,7 @@ LDR:102= 5% 220081 l/s 17:39:00
 - a case can  be 3d-printed. See here:  https://www.thingiverse.com/thing:6483258
 - And here: https://ednieuw.home.xs4all.nl/Woordklok/FibonacciClock/FibonacciClock.html
 
-Connect the parts as below for the ESP32-C3-supermini.
-![ESP32C3SuperMini-FibonacciClock-V03](https://github.com/ednieuw/Fibonacci-ESP32-C3-S3-Clock/assets/12166816/afda037b-d755-4bfd-b77c-a0076784dd04) 
-or (I had a problem with one Supermini on GPIO0. You can also use GPIO 10 or 21. Change the pin number is the program for the LDR!)
-![Fibo-C3-Mini-LDR-on-GPIO20](https://github.com/user-attachments/assets/67168f36-6e1a-4d60-8bc1-41120d27a53e)
-
-Connect the parts as below for the Waveshare ESP32-S3-Zero. 
-Keep in mind that the pin layout can be different for other ESP32-S3-Zero's. 
-![image](https://github.com/user-attachments/assets/40112b8f-f3c1-4168-9648-04b539ee6afb)
+Connect a WS2812 or SK6812 LED strip with at least 12 LEDs to the Arduino Nano ESP32 and the rest of the hardware. 
 
 # Using OTA
 An easy method is to install the Fibonacci clock program for the first time Over The Air (OTA).
@@ -206,10 +199,10 @@ Use a BLE serial terminal app on a phone or tablet for connection.
 
 For a PC the app Termite is fine as serial terminal.
 
-For IOS use:  BLE Serial Pro or BLESerial nRF. 
-
-For Android use: Serial Bluetooth terminal. 
+For IOS use:  BLE Serial Pro or BLESerial nRF.  
 ![image](https://github.com/ednieuw/Fibonacci-ESP32-C3-S3-Clock/assets/12166816/7b269328-cea3-433c-bee3-04485b151789)
+
+<br>For Android use: Serial Bluetooth terminal.
 
 Bluetooth Low Energy (BLE) can use two types of protocol CC25nn or nRF52nn where nn is a specific number. This clock uses nRF52 from the company Nordic.  
 
@@ -219,19 +212,24 @@ Bluetooth Low Energy (BLE) can use two types of protocol CC25nn or nRF52nn where
 
 - The app will display a window and a line where commands can be entered and send to the clock.
 
-- Sending the letter I or i for information will display the menu followed with the actual settings of several preferences.
-On a ESP32-S3 there is a LED that will have a red dot lighted when the program is running. 
-A green dot will turn on when there is a WIFI connection.
-When there is a Bluetooth connection a blue dot in the LED will light.
 
-In both cases send the letter I of Information and the menu shows up.
+On the Arduino Nano ESP32 there is a LED that will have a red dot lighted when the program is running. 
+A green dot will turn on when there is a WIFI connection.
+When there is a Bluetooth connection a blue dot in the LED will light on.
+The LEDs on the Arduino Nano ESP32 and connected to pin D9 and D10 will turn On and Off every second.
+
+- Sending the letter I or i for information will display the menu followed with the actual settings of several preferences.
+
 Enter the first letter of the setting you want to changes followed with a code.
 Some entries just toggle On and Off. Like the W to set WIFI Off or On. 
+
 To change the SSID and password:
 Send the letter A or a followed with the WIFI station name. 
 Amy-ssid and send this command. Eg AFRITZ!Box01 or aFRITZ!Box01. Starting with an upper or lower case character is an identical instruction in the command string
+
 Then the letter B followed with the password.
 Bmypassword and send the password.
+
 Cbroadcastname  will change to name displayed in the Bluetooth connection list. Something like: cMyClock
 
 If the length of the SSID and/or password is less then 5 characters the WIFI will be turned off automatically to avoid connection errors.
@@ -361,7 +359,16 @@ Let's pick one if you happen to live here: Antarctica/Troll,"<+00>0<+02>-2,M3.5.
 Copy the string between the " "'s and send it with starting with an 'E' or 'e' in front.
 E<+00>0<+02>-2,M3.5.0/1,M10.5.0/3.
 Time zones and daylight savings should be ended and replaced by one universal date and time for the while planet cq universe. But that is my opinion.
-Make own colour of: (Hex RRGGBB)
+
+"F Fibonacci or Chrono display",
+switch 12 LED clock between Fibonacci or chrono display
+
+G Scan WIFI networks
+See a list of WIFI network that can be connected to
+
+H Toggle use rotary encoder
+Toggle the use of the rotary encoder.
+Switch to Off when there in no rotary encoder connected to the PCB
 
 I To print this Info menu
 Print the menu to Bluetooth and the serial monitor connected with an USB-cable.
@@ -373,21 +380,21 @@ It also shows how many times the processor loops through the program and checks 
 N Display off between Nhhhh (N2208)
 With N2208 the display will be turned off between 22:00 and 8:00.
 
-O toggle the display off and on.
+O Toggle the display off and on.
 
-P toggle the status LEDs on the MCU off and on.
+P Toggle the status LEDs on the MCU off and on.
 
 Q Display colour choice (Q0-9)
-Q0 = Mondriaan1
-Q1 = Mondriaan2
-Q2 = RGB
-Q3 = Greens
-Q4 = Pastel
-Q5 = Modern
-Q6 = Cold
-Q7 = Warm
-Q8 = Earth
-Q9 = Mondriaan3
+  Q0= Mondriaan1
+  Q1= Mondriaan2
+  Q2= RGB
+  Q3= Greens
+  Q4= Pastel
+  Q5= Modern
+  Q6= Cold
+  Q7= Warm
+  Q8= Mondriaan3
+  Q9= Mondriaan4
 
 R Reset settings 
 R will set all preferences to default settings, it also clears the SSID and password.
@@ -398,7 +405,10 @@ See chapter: Regulating the light intensity of the display
 
 @ = Reset MCU
 @ will restart the MCU. This is handy when the SSID, et cetera are changed and the program must be restarted. Settings will not be deleted.
- 
+U Demo mode (msec) (U200)
+Let the run the time at a higher speed. U200 will run the clock 5 times faster.
+
+
 W=WIFI, X=NTP&, Y=BLE, Z=Use SD
 Toggle WIFI, NTP on and off.
 Enter the character will toggle it on or off. 
