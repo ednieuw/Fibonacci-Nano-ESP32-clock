@@ -93,9 +93,11 @@ Select By GPIO numbering.
 ![image](https://github.com/user-attachments/assets/5cf12459-5826-417b-a234-e2081a01e1c3)
 
 
-3)Flash and Monitor
-  You can now upload your sketch to the device. 
+3) Flash and Monitor
+  You can now upload your sketch to the device.
+ 
   To monitor the device in the serial monitor, you need to select the USB port and open the Monitor tool selecting the correct baud rate (usually 115200) according to the Serial.begin() defined in your code.
+  
 4) Enter (or send) the letter I in the serial terminal to see the menu of the Fibonacci clock displayed.
 
 When the serial monitor is on during start up something similar as below is printed. In this case the credentials for the WIFI router are known to the software.
@@ -168,12 +170,12 @@ LDR:102= 5% 220081 l/s 17:39:00
 ```
 5) Perform a reset with option R in the menu of the program after the first upload to be sure everything is set to their default settings.
 
-- The working of the code is explained here: https://github.com/ednieuw/ESP32-C3-Clock-and-more
+- The working of the code is explained below
 - Building a Fibonacci clock is explained here: https://github.com/ednieuw/Fibonacci-Vierkantekokerklok
 - a case can  be 3d-printed. See here:  https://www.thingiverse.com/thing:6483258
 - And here: https://ednieuw.home.xs4all.nl/Woordklok/FibonacciClock/FibonacciClock.html
 
-Connect a WS2812 or SK6812 LED strip with at least 12 LEDs to the Arduino Nano ESP32 and the rest of the hardware. 
+Connect a WS2812 or SK6812 LED strip with at least 12 LEDs to the Arduino Nano ESP32 and connect the rest of the hardware like the RTC and rotary. 
 
 # Using OTA
 An easy method is to install the Fibonacci clock program for the first time Over The Air (OTA).
@@ -189,8 +191,10 @@ Open the serial monitor in the IDE to see the IP address
 Or find out in your router what IP address it has received.
 Type in a  browser the IP-address. Something like http://192.168.178.156/ in my case.
 Login with ‘’admin’’ and ‘’admin’’
-Load the “ESP32-C3S3-FiboV010.ino.esp32s3.bin” file. (or a higher V010) 
+Load the “ESP32ArduinoFibonacci_V003.ino.arduino_nano_nora.bin” file. (or a higher V003) 
+
 And hops, the app is running.
+
 Enter your WIFI credentials with BLE op your mobile phone in the menu of the clock, Reset and the clock is running.
 Or open the ip-addres in your router (in my case: http://192.168.178.156/) and enter the credential wit optie A and B from the menu.(See below for a detailed description)
 
