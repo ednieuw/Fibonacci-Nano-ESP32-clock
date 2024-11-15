@@ -196,7 +196,7 @@ Load the “ESP32ArduinoFibonacci_V003.ino.arduino_nano_nora.bin” file. (or a 
 And hops, the app is running.
 
 Enter your WIFI credentials with BLE op your mobile phone in the menu of the clock, Reset and the clock is running.
-Or open the ip-addres in your router (in my case: http://192.168.178.156/) and enter the credential wit optie A and B from the menu.(See below for a detailed description)
+Or open the ip-addres in your router (in my case: http://192.168.178.156/) and enter the credential with option A and B from the menu.(See below for a detailed description)
 
 #  Installations  
 
@@ -308,21 +308,18 @@ With the parameter V the lowest brightness can be controlled. With a value betwe
 V5 is the default value. 
 The maximum brightness of the display is controlled with the parameter U. Also a value between 0 and 255.
 With parameter S the slope can be controlled how fast maximum brightness is achieved. 
-
-
-
  
 Settings are set by entering the first character of a command following by parameters if necessary.
 For example: 
-To set the colours of the fonts in the display to white enter: Q2
-
-
+To set the colour palette in the display to greens: Q3
 
 Turn off WIFI by sending a W.
+
 Restart the clock with the letter @.
+
 Reset to default setting by send R. 
 
-  	 
+   
 HTML page	BLE menu
 
  
@@ -405,8 +402,10 @@ Q Display colour choice (Q0-9)
 R Reset settings 
 R will set all preferences to default settings, it also clears the SSID and password.
 
-U Demo mode (U1000)
-In demo mode the speed of a second is accelarated. U1000 is good start value.
+U Demo mode0 - 999 (U100)
+In demo mode the speed of a second is accelerated.
+With U100 a second takes 100 ms and time runs 10 times faster.
+Values between 0 and 999 msecs can be entered.
 
 V Normal, Extreme or Ultimate mode
 
