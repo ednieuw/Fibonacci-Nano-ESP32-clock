@@ -173,7 +173,7 @@ LDR:102= 5% 220081 l/s 17:39:00
 - The working of the code is explained below
 - Building a Fibonacci clock is explained here: https://github.com/ednieuw/Fibonacci-Vierkantekokerklok
 - a case can  be 3d-printed. See here:  https://www.thingiverse.com/thing:6483258
-- And here: https://ednieuw.home.xs4all.nl/Woordklok/FibonacciClock/FibonacciClock.html
+- And here: https://ednieuw.nl/Woordklok/FibonacciClock/FibonacciClock.html
 
 Connect a WS2812 or SK6812 LED strip with at least 12 LEDs to the Arduino Nano ESP32 and connect the rest of the hardware like the RTC and rotary. 
 
